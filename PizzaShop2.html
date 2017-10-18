@@ -7,8 +7,8 @@
     <!--JSON DATA AREA-->
     <script>
         var pizzaChoicesObject = {
-
     "pizza": [
+
         {
             "Type": "CHEESY PEASY"   
         },{
@@ -62,7 +62,7 @@
     <!--Metadata is always passed as name/value pairs.-->
     <meta charset="utf-8" />
     <meta name="description" content="Pizza Shop">
-    <meta name="keywords" content="Pizza, ingredients, organic farms">
+    <meta name="keywords" content="Pizza, ingredients, organic farm fresh goods">
     <!--CSS STYLE RULES AREA-->
     <!--This is an external style sheet reference-->
     <link rel="stylesheet" type="text/css" href="styles/common.css" />
@@ -70,10 +70,54 @@
     <style type="text/css">
         /*HTML Style Rule*/
         h1 {
-            color: blue !important;
-            /*text-align: center;*/
+            color: blue;
+			font-weight:bold;
+            text-align: center;
+			text-shadow: rgba(0, 0, 0, .3) 5px 5px 5px;
         }
-
+		
+		h2 {
+			color: black !strong;
+			text-align:center;
+			font-family: "Times New Roman", Times, serif;
+			font-size: large;	
+			text-shadow: rgba(0, 0, 0, .2) 3px 3px 3px;
+		}
+		
+		h3{
+			color: brown;
+			font-size: medium;
+			font-family: Helvetica, sans-serif;
+			font-weight: bold;
+			text-align: center;
+		}
+		h4{
+				font-size:large;
+				color: orange;
+				font-family: Helvetica, sans-serif;
+				font-weight: bold;
+				text-align: center;
+				text-shadow: rgba(0, 0, 0, .3) 5px 5px 5px;
+		}
+		h5{
+				font-size: large;
+				color: red;
+				font-family: 'JungleFeverRegular', Helvetica, sans-serif;
+				font-weight: bold;
+				text-align: center;
+				text-shadow: rgba(0, 0, 0, .2) 3px 3px 3px;
+		}
+		h6{
+				font-size: large;
+				font-family: 'Lobster13Regular', Helvetica, sans-serif;
+				font-weight: bold;
+				text-align: center;
+				text-shadow: rgba(0, 0, 0, .2) 3px 3px 3px;
+	
+				/*text stroke*/
+				-webkit-text-stroke: 4px rgba(0, 0, 0, .6);
+		}
+	
         nav {
             width: 100%; /*Uses 100% width of the screen*/
             height: 40px;
@@ -147,66 +191,57 @@
 
     <div id="home" style="display:block">
         <h1>Welcome to Bryan's Pizza Shop</h1>
-        <aside style="line-height:30px;background-color:#eeeeee;height:300px;width:100px;float:left;padding:5px;">Come enjoy<br> great pizza<br> from our family <br>to yours!<br></aside>
-        <section>Pizza so good</section>
-        <article>you wont be able to stop eating like this guy</article>
-        <img src="http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0713/broken-gif-pizza2.gif" alt="pizza trip" max-width=100% max-height=100%>
+        <aside style="line-height:30px;background-color:#eeeeee;height:300px;width:100px;float:left;padding:5px;">Come enjoy<br> great pizza<br> from our family <br>to yours!<br><br>Our secret Recipe is the best in the midwest!<br></aside>
+        <h4><section>Pizza so good you won't want to stop eating it!</section></h4>
+        <h4><article>Voted Number 1 by the Sandusky Times 10 years running!</article></h4>
+        <center><img src="http://www.publicdomainpictures.net/pictures/120000/velka/pizza-1431957490WiY.jpg" alt="pizza trip" width=60% height=60%></center>
     </div>
 
     <div id="menu" style="display:none">
-        <h1>Menu Page Section</h1>
-        <aside>Our Pizza Options</aside>
-        <section>Try our distinct speciality pizzas!</section>
-        <article> Be on look out for monthly specials!</article>
+			<h1>Menu Page Section</h1>
+			<h3><aside>Our Pizza Options</aside></h3>
+			<h3><section>Try our distinct speciality pizzas!</section></h3>
+			<h3><article> Be on look out for monthly specials!</article></h3>
+			<script> 
+					
+					var pizza_info;
 
-        <script> 
-                
-                var pizza_info;
-
-                for(var x=0; x < pizzaChoicesObject.pizza.length; x++){                    
-                    if(x % 3 == 0){
-                        elem = document.createElement("h2");
-                        elem.setAttribute("id", "Type" );
-                        pizza_info = document.createTextNode(pizzaChoicesObject.pizza[x].Type);
-                        elem.append(pizza_info);
-                        document.getElementById("menu").appendChild(elem);
-                        // document.body.appendChild(elem);
-                    } 
-                    else if ( x % 3 == 1){
-                        elem = document.createElement("h5")
-                        elem.setAttribute("id", "Description" );
-                        pizza_info = document.createTextNode(pizzaChoicesObject.pizza[x].Description);
-                        elem.append(pizza_info);
-                        document.getElementById("menu").appendChild(elem);
-                        // document.body.appendChild(elem);
-                    } else {
-                        elem = document.createElement("p")
-                        elem.setAttribute("id", "Cost" );
-                        pizza_info = document.createTextNode(pizzaChoicesObject.pizza[x].Cost);
-                        elem.append(pizza_info);
-                        document.getElementById("menu").appendChild(elem);
-                        // document.body.appendChild(elem);
-                    }
-                    
-                }
-                
-                </script>
-    </div>
-
+					for(var x=0; x < pizzaChoicesObject.pizza.length; x++){                    
+						if(x % 3 == 0){
+							elem = document.createElement("h5");
+							elem.setAttribute("id", "Type" );
+							pizza_info = document.createTextNode(pizzaChoicesObject.pizza[x].Type);
+							elem.append(pizza_info);
+							document.getElementById("menu").appendChild(elem);
+							// document.body.appendChild(elem);
+						} 
+						else if ( x % 3 == 1){
+							elem = document.createElement("h6")
+							elem.setAttribute("id", "Description" );
+							pizza_info = document.createTextNode(pizzaChoicesObject.pizza[x].Description);
+							elem.append(pizza_info);
+							document.getElementById("menu").appendChild(elem);
+							// document.body.appendChild(elem);
+						} else {
+							elem = document.createElement("h4")
+							elem.setAttribute("id", "Cost" );
+							pizza_info = document.createTextNode(pizzaChoicesObject.pizza[x].Cost);
+							elem.append(pizza_info);
+							document.getElementById("menu").appendChild(elem);
+							// document.body.appendChild(elem);
+						}
+						
+					}
+					
+			</script>	
+	</div>
+				
     <div id="about" style="display:none">
         <h1>Bryan's Pizza: Our Story! </h1>
-        <aside style="line-height:30px;background-color:#eeeeee;height:300px;width:100px;float:left;padding:5px;">pizzas<br> good food<br> good times<br></aside>
-        <section>How it all started!</section>
-        <article>One day while living in the quiet city of Sandusky, Ohio we decided that pizza was bland. The only options only being your standard run of the mill fast food pizza places and no real pizza joints, we decided to take matters into our hands and change that.  Now 10 years later it's clear we are here to stay.  The Sandusky area has championed us as best pizza place for 10 years in row since our opening. And we are a landmark for anyone passing through. If you've come to our town and are looking for food, look no further, it's pizza time. </article>
-        <img src="http://31.media.tumblr.com/e9e956e368b54ef708af6c35ca4b90dc/tumblr_nfc6zfWJoD1rsxqqio9_500.gif" alt "ninja" max-width=100% max-height =100% />
+        <center><section>How it all started!</section></center>
+        <h3><article>One day while living in the quiet city of Sandusky, Ohio we decided that pizza was bland. The only options only being your standard run of the mill fast food pizza places and no real pizza joints, we decided to take matters into our hands and change that.  Now 10 years later it's clear we are here to stay.  The Sandusky area has championed us as best pizza place for 10 years in row since our opening. And we are a landmark for anyone passing through. If you've come to our town and are looking for food, look no further, it's pizza time. </article></h3>
+        <center><img src="http://indooradnetwork.com/images/pizza/pizza-5.jpg" alt "ninja" width=50% height =50% /></center>
     </div>
-
-
-
-
-
-
-
 
     <footer>
         <div>
